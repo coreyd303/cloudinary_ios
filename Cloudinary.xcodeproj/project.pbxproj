@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -115,8 +115,8 @@
 		36D00E1F1D9D82E800BF4DD5 /* CLDFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D00E1E1D9D82E800BF4DD5 /* CLDFace.swift */; };
 		36D00E211D9D833000BF4DD5 /* CLDBoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D00E201D9D833000BF4DD5 /* CLDBoundingBox.swift */; };
 		860465001DC79EA5007172D7 /* CLDNetworkUploadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860464FF1DC79EA5007172D7 /* CLDNetworkUploadRequest.swift */; };
-		E0E6A0232398590E00E406EB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E6A0222398590E00E406EB /* Alamofire.framework */; };
-		E0E6A0242398590E00E406EB /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E0E6A0222398590E00E406EB /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E0E6A0232398590E00E406EB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E6A0222398590E00E406EB /* Alamofire.framework */; platformFilter = ios; };
+		E0E6A0242398590E00E406EB /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E0E6A0222398590E00E406EB /* Alamofire.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EA5283E4060003509EF73472 /* CLDEagerTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA52894B510D7324165C17BD /* CLDEagerTransformation.swift */; };
 /* End PBXBuildFile section */
 
@@ -1103,7 +1103,6 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/Mac/Alamofire.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -1247,7 +1246,11 @@
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = CloudinaryTests/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cloudinary.CloudinaryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1266,7 +1269,11 @@
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = CloudinaryTests/SupportingFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cloudinary.CloudinaryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1387,7 +1394,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1415,7 +1423,11 @@
 				INFOPLIST_FILE = Cloudinary/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
@@ -1451,7 +1463,11 @@
 				INFOPLIST_FILE = Cloudinary/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SDKROOT)/usr/lib/system",
